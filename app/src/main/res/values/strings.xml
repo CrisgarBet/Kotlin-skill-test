@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PruebaDiens</string>
+    <string name="action_settings">Settings</string>
+    <string name="fragment_list_tag">List Fragment</string>
+    <string name="info">Info</string>
+
+</resources>
