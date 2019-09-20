@@ -46,12 +46,10 @@ class ListFragment : Fragment(), ListContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        if (::presenter.isInitialized) {
-            presenter.attach(this)
-            presenter.subscribe()
+        presenter.attach(this)
+        presenter.subscribe()
 
-            initView()
-        }
+        initView()
 
     }
 
