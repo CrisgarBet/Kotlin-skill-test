@@ -8,5 +8,6 @@ class Constants {
         const val UPCOMING = "3/movie/upcoming?api_key=ec0476e5f8cf8d29d8a923872942752b&language=en-US&page=1"
         const val URL_IMAGES = "https://image.tmdb.org/t/p/w500/"
         const val GENRE ="3/genre/movie/list?api_key=ec0476e5f8cf8d29d8a923872942752b&language=en-US"
+        const val VIDEO ="/videos?api_key=ec0476e5f8cf8d29d8a923872942752b&language=en-US"
     }
 }

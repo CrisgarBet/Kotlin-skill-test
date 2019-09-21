@@ -9,7 +9,7 @@ data class Result(
     @SerializedName("vote_count") var vote_count: Double,
     @SerializedName("video") var video: Boolean,
     @SerializedName("media_type") var media_type: String,
-    @SerializedName("id") var id: Double,
+    @SerializedName("id") var id: Int,
     @SerializedName("adult") var adult: Boolean,
     @SerializedName("backdrop_path") var backdrop_path: String,
     @SerializedName("original_language") var original_language: String,
