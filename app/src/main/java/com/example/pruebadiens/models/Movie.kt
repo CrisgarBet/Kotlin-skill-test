@@ -1,19 +1,10 @@
 package com.example.pruebadiens.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Movie(
-    var poster_path: String,
-    var popularity: Double,
-    var vote_count: Double,
-    var video: Boolean,
-    var media_type: String,
-    var id: Double,
-    var adult: Boolean,
-    var backdrop_path: String,
-    var original_language: String,
-    var original_title: String,
-    var genre_ids: Array<Int>,
-    var title: String,
-    var vote_average: Double,
-    var overview: String,
-    var release_date: String
+    @SerializedName("page") var page: Int,
+    @SerializedName("total_results") var total_results: Double,
+    @SerializedName("total_pages") var total_pages: Double,
+    @SerializedName("results") var results: MutableList<Result>
 )
