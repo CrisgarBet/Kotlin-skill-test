@@ -1,22 +1,23 @@
-package com.example.pruebadiens.fragments
+package com.example.moviespractice.fragments
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.ProgressBar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ProgressBar
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pruebadiens.R
-import com.example.pruebadiens.adapters.RecyclerAdapter
-import com.example.pruebadiens.api.ApiServiceInterface
-import com.example.pruebadiens.models.Genre
-import com.example.pruebadiens.models.Movie
-import com.example.pruebadiens.util.Constants
+import com.example.moviespractice.R
+import com.example.moviespractice.adapters.RecyclerAdapter
+import com.example.moviespractice.api.ApiServiceInterface
+import com.example.moviespractice.models.Genre
+import com.example.moviespractice.models.Movie
+import com.example.moviespractice.models.Result
+import com.example.moviespractice.util.Constants
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import org.jetbrains.anko.alert
@@ -24,10 +25,8 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import android.widget.ArrayAdapter
-import com.example.pruebadiens.models.Result
 
-class FragmentMovies : Fragment() {
+class FragmentUpcoming : Fragment() {
 
     lateinit var mProgressBar: ProgressBar
     lateinit var mRecyclerView: RecyclerView
@@ -52,7 +51,7 @@ class FragmentMovies : Fragment() {
         )
 
 
-        getPopularMovies(view)
+        getUpcomingMovies(view)
 
         // Inflate the layout for this fragment
         return view
@@ -75,10 +74,10 @@ class FragmentMovies : Fragment() {
     }
 
 
-    private fun getPopularMovies(view: View) {
+    private fun getUpcomingMovies(view: View) {
         doAsync {
             val call = getRetrofit().create(ApiServiceInterface::class.java)
-                .getAllMovies(Constants.POPULAR_MOVIES).execute()
+                .getAllMovies(Constants.UPCOMING).execute()
             val movies = call.body() as Movie
             uiThread {
                 if (movies.total_results > 0) {
@@ -140,7 +139,7 @@ class FragmentMovies : Fragment() {
         }
 
         val aa = ArrayAdapter(
-            context,
+            context!!,
             R.layout.support_simple_spinner_dropdown_item, itemsSp
         )
 
@@ -182,7 +181,7 @@ class FragmentMovies : Fragment() {
         pl.forEach {
             val movie = it
             movie.genre_ids.forEach {
-                if (it.toString().contains(query)) {
+                if (it.toString().equals(query)) {
                     filteredModeList.add(movie)
                 }
             }

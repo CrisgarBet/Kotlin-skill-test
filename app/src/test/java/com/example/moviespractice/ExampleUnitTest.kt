@@ -1,4 +1,4 @@
-package com.example.pruebadiens
+package com.example.moviespractice
 
 import org.junit.Test
 

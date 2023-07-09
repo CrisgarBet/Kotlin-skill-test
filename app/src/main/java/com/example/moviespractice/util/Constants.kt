@@ -1,4 +1,4 @@
-package com.example.pruebadiens.util
+package com.example.moviespractice.util
 
 class Constants {
     companion object {

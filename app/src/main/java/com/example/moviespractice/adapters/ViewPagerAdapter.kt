@@ -1,4 +1,4 @@
-package com.example.pruebadiens.adapters
+package com.example.moviespractice.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

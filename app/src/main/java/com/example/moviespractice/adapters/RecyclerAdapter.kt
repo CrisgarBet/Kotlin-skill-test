@@ -1,7 +1,6 @@
-package com.example.pruebadiens.adapters
+package com.example.moviespractice.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,19 +8,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pruebadiens.R
-import com.example.pruebadiens.api.ApiServiceInterface
-import com.example.pruebadiens.models.Movie
-import com.example.pruebadiens.models.Response
-import com.example.pruebadiens.models.Result
-import com.example.pruebadiens.models.Video
-import com.example.pruebadiens.util.Constants
+import com.example.moviespractice.R
+import com.example.moviespractice.api.ApiServiceInterface
+import com.example.moviespractice.models.Response
+import com.example.moviespractice.models.Result
+import com.example.moviespractice.util.Constants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.dialog.view.*
-import okhttp3.Cache
-import okhttp3.OkHttpClient
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import retrofit2.Retrofit
@@ -78,7 +73,6 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                 //AlertDialogBuilder
                 val mBuilder = AlertDialog.Builder(context)
                     .setView(mDialogView)
-                    .setTitle("Detalle")
                 //show dialog
                 val mAlertDialog = mBuilder.show()
                 //login button click of custom layout

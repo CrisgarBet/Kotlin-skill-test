@@ -1,8 +1,8 @@
-package com.example.pruebadiens.api
+package com.example.moviespractice.api
 
-import com.example.pruebadiens.models.Genre
-import com.example.pruebadiens.models.Movie
-import com.example.pruebadiens.models.Response
+import com.example.moviespractice.models.Genre
+import com.example.moviespractice.models.Movie
+import com.example.moviespractice.models.Response
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Url
